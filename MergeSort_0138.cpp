@@ -74,7 +74,23 @@ void mergeSort(int low, int high)
         i++;
         k++;
     }
+
+    for (int x = low; x <= high; x++) 
+    {
+        arr[x] = B[x];
+    }
+} 
+
+void output()
+{
+    cout << "\nData setelah diurutkan (Merge Sort): ";
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }
+
 
 int main() {
     return 0;
