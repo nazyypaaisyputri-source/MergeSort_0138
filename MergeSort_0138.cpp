@@ -1,12 +1,15 @@
 #include <iostream>
 using namespace std;
 
+// create main array & temporary array
 int arr[20], B[20];
+// n is array input size
 int n;
 
 void input() 
 {
-    while (true) {
+    while (true) 
+    {
         cout << "Masukkan Panjang element array : ";
         cin >> n;
 
@@ -30,25 +33,30 @@ void input()
     }
 }
 
+// create function mafgeSort
 void mergeSort(int low, int high) 
 {
-    if (low >= high)
+
+    if (low >= high) // step 1
     { 
-        return;
+        return; // step 1a
     }
 
-    int mid = (low + high) / 2;
+    int mid = (low + high) / 2; // step 2
 
-    mergeSort(low, mid);
-    mergeSort(mid + 1, high);
+    // step 3
+    // fungsi rekursi - memanggil diri sendiri
+    mergeSort(low, mid); // step 3.a
+    mergeSort(mid + 1, high); // step 3.b
 
-    int i = low;
-    int j = mid + 1;
-    int k = low;
+    // step 4
+    int i = low; // step 4.a
+    int j = mid + 1; // step 4.b
+    int k = low; // step 4.c
 
-    while (i <= mid && j <= high) 
+    while (i <= mid && j <= high) // step 4.d
     {
-        if (arr[i] <= arr[j]) 
+        if (arr[i] <= arr[j]) //step 4.d.i
         {
             B[k] = arr[i];
             i++;
@@ -58,23 +66,24 @@ void mergeSort(int low, int high)
             B[k] = arr[j];
             j++;
         }
-        k++;
+        k++; // step 4.d.ii
     }
 
-    while (j <= high) 
+    while (j <= high) // step 4.e
     {
-        B[k] = arr[j];
-        j++;
-        k++; + 1;
+        B[k] = arr[j]; // step 4.e.i
+        j++; // step 4.e.ii
+        k++; + 1; //step 4.e.iii
     }
 
-    while (i <= mid) 
+    while (i <= mid) //step 4.f
     {
-        B[k] = arr[i];
-        i++;
-        k++;
+        B[k] = arr[i]; // step 4.f.i
+        i++; //step 4.f.ii
+        k++; // 4.f.iii
     }
 
+    // step  5
     for (int x = low; x <= high; x++) 
     {
         arr[x] = B[x];
