@@ -92,6 +92,9 @@ void output()
 }
 
 
-int main() {
-    return 0;
+int main() 
+{
+    input();
+    mergeSort(0, n - 1);
+    output();
 }
