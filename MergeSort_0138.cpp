@@ -19,7 +19,7 @@ void input()
             cout << "\nMaksimal panjang array adalah 20" << endl;
         }
      }
-     cout << "\n----------------------------" << endl;
+    cout << "\n----------------------------" << endl;
     cout << "Inputkan Isi elemen array" << endl;
     cout << "----------------------------" << endl;
 
@@ -38,6 +38,9 @@ void mergeSort(int low, int high)
     }
 
     int mid = (low + high) / 2;
+
+    mergeSort(low, mid);
+    mergeSort(mid + 1, high);
 }
 
 int main() {
